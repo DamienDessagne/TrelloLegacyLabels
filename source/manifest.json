@@ -3,6 +3,7 @@
 	
 	"name": "Trello Legacy Labels",
 	"version": "1.1",
+	"description": "A simple extension that restores the appearance of expanded Trello labels to the legacy version",
 	
 	"description": "Restores the legacy labels for Trello",
 	"homepage_url": "https://github.com/DamienDessagne/TrelloLegacyLabels",

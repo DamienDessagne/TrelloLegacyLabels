@@ -1,4 +1,4 @@
-// Hide the little dot on labels :
+﻿// Hide the little dot on labels :
 var style = document.createElement("style")
 document.head.appendChild(style);
 style.sheet.insertRule("button.legacy-label::before { width:0px!important; }", style.sheet.cssRules.length);
