@@ -1,4 +1,11 @@
-﻿updateLabels = function() {
+﻿var isUpdating = false;
+
+updateLabels = function() {
+	if(isUpdating) // -> update already in progress
+		return;
+	
+	isUpdating = true;
+	
 	// Hide the little dot on labels :
 	var style = document.createElement("style")
 	document.head.appendChild(style);
@@ -7,7 +14,7 @@
 	// Observe DOM mutations and apply modifications on the fly :
 	MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
-	var observer = new MutationObserver(function(mutations, observer) {
+	observer = new MutationObserver(function(mutations, observer) {
 		var labelContainers = document.getElementsByClassName("list-card-front-labels-container");
 		if(labelContainers.length == 0)
 			return;
@@ -33,6 +40,7 @@
 				}
 			}
 		}
+		isUpdating = false;
 	});
 
 	observer.observe(document.body, {
